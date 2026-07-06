@@ -1,11 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriConnect Summit</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html">
+                    <img src="images/AfriConnectSummit-logo.jpeg" alt="logo AfriConnectSummit" height="50">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html" class="active">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Toggle dark/light géré en js -->
+                    <button class="theme-toggle" aria-label="Changer de thème">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <!-- Menu hamburger pour mobile -->
+                    <button class="hamburger" aria-label="Ouvrir le menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+              </div>
+        </nav>
+    </header>
+    <main>
+        <!-- HERO INTERNE -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Intervenants</h1>
+                <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                    <a href="index.html">Accueil</a> &gt; <span class="current">Intervenants</span>
+                </nav>
+            </div>
+        </section>
+
+       <!-- FILTRAGE + GRILLE -->
+        <section class="speakers-page">
+            <div class="container">
+                <p class="section-eyebrow reveal">Notre communauté</p>
+                <h2 class="section-title reveal">Tous les intervenants</h2>
+                <!-- Boutons de filtres, gérés en JS -->
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="tous">Tous</button>
+                    <button class="filter-btn" data-filter="ia-tech">IA & Tech</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="data">Data</button>
+                </div>
+
+                <div class="speakers-grid-full">
+                    <article class="speaker-card-full" data-categorie="business">
+                        <img class="speaker-photo" src="images/Fondateur.jpg" alt="Photo de Kwame Asante">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Kwame Asante</h3>
+                            <p class="speaker-role">Fondateur, PayFlow Africa</p>
+                            <p class="speaker-country">Ghana</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="ia-tech">
+                        <img class="speaker-photo" src="images/Directrice.jpg" alt="Photo de Sokhna Aicha Fall">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Sokhna Aicha Fall</h3>
+                            <p class="speaker-role">Directrice IA, DataSenegal</p>
+                            <p class="speaker-country">Sénégal</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="business">
+                        <img class="speaker-photo" src="images/Investisseur.jpg" alt="Photo de Tendai Moyo">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Tendai Moyo</h3>
+                            <p class="speaker-role">Investisseur, Baobab Ventures</p>
+                            <p class="speaker-country">Zimbabwe</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="design">
+                        <img class="speaker-photo" src="images/Designer.jpg" alt="Photo de Fatima Zahra">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Fatima Zahra</h3>
+                            <p class="speaker-role">Designer produit, Casaverse</p>
+                            <p class="speaker-country">Maroc</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="ia-tech">
+                        <img class="speaker-photo" src="images/Ingenieur.jpg" alt="Photo de Chidi Okafor">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Chidi Okafor</h3>
+                            <p class="speaker-role">Ingénieur logiciel, Lagos Cloud</p>
+                            <p class="speaker-country">Nigeria</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="design">
+                        <img class="speaker-photo" src="images/Design-Studio.jpg" alt="Photo de Naledi khumalo">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Naledi Khumalo</h3>
+                            <p class="speaker-role">Lead UX, Ubuntu Design Studio</p>
+                            <p class="speaker-country">Afrique du Sud</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="data">
+                        <img class="speaker-photo" src="images/Architecte.jpg" alt="Photo de Youssef El Amrani">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Youssef El Amrani</h3>
+                            <p class="speaker-role">Architecte Blockchain, Tunichain</p>
+                            <p class="speaker-country">Tunisie</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="business">
+                        <img class="speaker-photo" src="images/CEO.jpg" alt="Photo de Amy Colle Dieng">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Amy Colle Dieng</h3>
+                            <p class="speaker-role">CEO, SkinIsSkin</p>
+                            <p class="speaker-country">Sénégal</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card-full" data-categorie="data">
+                        <img class="speaker-photo" src="images/Data.jpg" alt="Photo de Samuel Mwangi">
+                        <div class="speaker-info">
+                            <h3 class="speaker-name">Samuel Mwangi</h3>
+                            <p class="speaker-role">Data Scientist, NairoTech</p>
+                            <p class="speaker-country">Kenya</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-col">
+                    <h3>Afri<span style="color: var(--accent-gold);">Connect</span> Summit</h3>
+                    <p>Le sommet tech panafricain qui réunit chaque année les acteurs du numérique du continent.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1GBBiLaqV4/?mibextid=wwXIfr" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/afrikonnect2018?s=21" aria-label="X"><i class="bi bi-x"></i></a>
+                        <a href="https://www.linkedin.com/company/africonnect-cargo/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.instagram.com/afri_connect?igsh=MTlvbjR0M240ajkwMQ==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <a href="index.html">Accueil</a>
+                    <a href="programme.html">Programme</a>
+                    <a href="intervenants.html">Intervenants</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <a href="mailto:contact@africonnectsummit.africa">contact@africonnectsummit.africa</a>
+                    <a href="tel:+221776525780">+221 77652 57 80</a>
+                    <p>Dakar, Sénégal</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="annee-actuelle">2026</span> AfriConnect Summit. Tous droits réservés.</p>
+                <p>Projet réalisé dans le cadre d'un examen L1 - Web</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" aria-label="Retour en haut">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,11 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriConnect Summit</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html">
+                    <img src="images/AfriConnectSummit-logo.jpeg" alt="logo AfriConnectSummit" height="50">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html" class="active">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Toggle dark/light géré en js -->
+                    <button class="theme-toggle" aria-label="Changer de thème">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <!-- Menu hamburger pour mobile -->
+                     <button class="hamburger" aria-label="Ouvrir le menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                     </button>
+                </div>
+              </div>
+        </nav>
+    </header>
+    <main>
+        <!-- HERO INTERNE -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Programme</h1>
+                <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                    <a href="index.html">Accueil</a> &gt; <span class="current">Programme</span>
+                </nav>
+            </div>
+        </section>
+        <!-- ONGLETS 3 Jours -->
+        <section>
+            <div class="container">
+                <p class="section-eyebrow reveal">Planning</p>
+                <h2 class="section-title reveal">Le programme heure par heure</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="jour1">Jour 1</button>
+                    <button class="tab-btn" data-tab="jour2">Jour 2</button>
+                    <button class="tab-btn" data-tab="jour3">Jour 3</button>
+                </div>
+
+                <!-- JOUR 1 -->
+                <div class="tab-panel active" id="jour1">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09h00</td>
+                                <td>Cérémonie d'ouverture</td>
+                                <td>Équipe AfriConnect</td>
+                                <td>Salle Kigali A</td>
+                            </tr>
+
+                            <tr>
+                                <td>10h00</td>
+                                <td>L'IA au service des PME africaines</td>
+                                <td>Sokhna Aicha Fall</td>
+                                <td>Salle Kigali A</td>
+                            </tr>
+
+                            <tr>
+                                <td>11h30</td>
+                                <td>Lever des fonds en Afrique de l'Ouest</td>
+                                <td>Kwame Asante</td>
+                                <td>Salle Accra</td>
+                            </tr>
+
+                            <tr>
+                                <td>14h00</td>
+                                <td>Atelier : construire une API en 1h</td>
+                                <td>Chidi Okafor</td>
+                                <td>Salle Lagos</td>
+                            </tr>
+
+                            <tr>
+                                <td>16h00</td>
+                                <td>Table ronde : cybersécurité mobile money</td>
+                                <td>Fatima Zahra</td>
+                                <td>Salle Kigali B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- JOUR 2 -->
+                <div class="tab-panel" id="jour2">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09h30</td>
+                                <td>Design inclusif pour le marché africain</td>
+                                <td>Naledi Khumalo</td>
+                                <td>Salle Kigali A</td>
+                            </tr>
+
+                            <tr>
+                                <td>11h00</td>
+                                <td>Data & agriculture de précision</td>
+                                <td>Tendai Moyo</td>
+                                <td>Salle Nairobi</td>
+                            </tr>
+
+                            <tr>
+                                <td>13h00</td>
+                                <td>Déjeuner networking</td>
+                                <td>-</td>
+                                <td>Terrasse</td>
+                            </tr>
+
+                            <tr>
+                                <td>15h00</td>
+                                <td>Pitch startups - sessions 1</td>
+                                <td>10 fondateurs sélectionnés</td>
+                                <td>Salle Kigali B</td>
+                            </tr>
+
+                            <tr>
+                                <td>17h00</td>
+                                <td>Blockchain et transferts transfrontaliers</td>
+                                <td>Youssef El Amrani</td>
+                                <td>Salle Accra</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- JOUR3 -->
+                <div class="tab-panel" id="jour3">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>09h30</td>
+                                <td>Scaler une startup à l'échelle du continent</td>
+                                <td>Chinelo Eze</td>
+                                <td>Salle Kigali A</td>
+                            </tr>
+
+                            <tr>
+                                <td>11h00</td>
+                                <td>Femmes leaders dans la tech africaine</td>
+                                <td>Naledi Khumalo</td>
+                                <td>Salle Nairobi</td>
+                            </tr>
+
+                            <tr>
+                                <td>13h30</td>
+                                <td>Pitch startups - finale</td>
+                                <td>5 finalistes</td>
+                                <td>Salle Kigali B</td>
+                            </tr>
+
+                            <tr>
+                                <td>15h30</td>
+                                <td>L'Avenir du travail à distance en Afrique</td>
+                                <td>Samuel Mwangi</td>
+                                <td>Salle Lagos</td>
+                            </tr>
+
+                            <tr>
+                                <td>17h30</td>
+                                <td>Clôture et remise des prix</td>
+                                <td>Équipe AfriConnect</td>
+                                <td>Salle Kigali A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- THEMATIQUES -->
+        <section class="themes" style="background-color: var(--surface);">
+            <div class="container">
+                <p class="section-eyebrow reveal">Au programme</p>
+                <h2 class="section-title reveal">Les 4 grandes thématiques</h2>
+                <p class="section-intro reveal">Chaque session s'inscrit dans l'un de ces quatre axes.</p>
+            
+                <div class="themes-grid">
+                    <article class="theme-card reveal zoom">
+                        <i class="bi bi-cpu"></i>
+                        <h3>IA & Innovation</h3>
+                        <p>Applications concrètes de l'intelligence artificielle dans les entreprises africaines.</p>
+                    </article>
+
+                    <article class="theme-card reveal zoom">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>Business & entrepreneuriat</h3>
+                        <p>Financement, croissance et stratégies pour les startups du continent.</p>
+                    </article>
+
+                    <article class="theme-card reveal zoom">
+                        <i class="bi bi-palette2"></i>
+                        <h3>Design & Créativité</h3>
+                        <p>Créer des produits numériques pensés pour les usages et les réalités locales.</p>
+                    </article>
+
+                    <article class="theme-card reveal zoom">
+                        <i class="bi bi-shield-lock"></i>
+                        <h3>Data & cybersécurité</h3>
+                        <p>Protéger les données et exploiter la donnée dans un contexte panafricain.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-col">
+                    <h3>Afri<span style="color: var(--accent-gold);">Connect</span> Summit</h3>
+                    <p>Le sommet tech panafricain qui réunit chaque année les acteurs du numérique du continent.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1GBBiLaqV4/?mibextid=wwXIfr" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/afrikonnect2018?s=21" aria-label="X"><i class="bi bi-x"></i></a>
+                        <a href="https://www.linkedin.com/company/africonnect-cargo/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.instagram.com/afri_connect?igsh=MTlvbjR0M240ajkwMQ==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <a href="index.html">Accueil</a>
+                    <a href="programme.html">Programme</a>
+                    <a href="intervenants.html">Intervenants</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <a href="mailto:contact@africonnectsummit.africa">contact@africonnectsummit.africa</a>
+                    <a href="tel:+221776525780">+221 77652 57 80</a>
+                    <p>Dakar, Sénégal</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="annee-actuelle">2026</span> AfriConnect Summit. Tous droits réservés.</p>
+                <p>Projet réalisé dans le cadre d'un examen L1 - Web</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" aria-label="Retour en haut">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
 </body>
 </html>
