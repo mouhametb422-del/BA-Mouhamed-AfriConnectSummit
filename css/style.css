@@ -539,3 +539,610 @@ footer{
     color: var(--background);
     margin: .4rem 0;
 }
+
+/* COMMIT 5 - CSS des pages Programme, Intervenants, Contact et Responsive(Mobile, tablette, desktop)*/
+
+/* HERO DES PAGES INTERNES */
+.page-hero{
+    padding: 70px 0;
+    background: linear-gradient(135deg, var(--primary),var(--secondary));
+    color: #fff;
+    text-align: center;
+}
+.page-hero h1{
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.breadcrumb{
+    font-size: .95rem;
+}
+.breadcrumb a{
+    color: var(--accent-gold);
+}
+.breadcrumb .current{
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ONGLETS JOURS */
+
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+.tab-btn {
+    padding: 12px 30px;
+    border: 2px solid var(--accent);
+    border-radius: 15px;
+    background: var(--surface);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    color: var(--accent);
+}
+.tab-btn:hover{
+    background: var(--accent);
+    color: #fff;
+}
+.tab-btn.active{
+    background: var(--primary);
+    color: #fff;
+}
+
+/* CONTENU DES ONGLETS */
+.tab-panel{
+    display: none;
+}
+.tab-panel.active{
+    display: block;
+}
+
+/* TABLEAU DU PROGRAMME */
+.schedule-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.schedule-table th{
+    background: var(--primary);
+    color: #fff;
+    padding: 18px;
+    text-align: left;
+}
+.schedule-table td{
+    padding: 18px;
+    border-bottom: 1px solid var(--border);
+}
+.schedule-table tbody tr{
+    transition: var(--transition);
+}
+.schedule-table tbody tr:hover{
+    background: rgba(46, 141, 192, 0.121);
+}
+
+/* THEMATIQUES */
+.themes-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.theme-card{
+    background: var(--primary);
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    transition: var(--transition);
+}
+.theme-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 5px 15px rgb(11, 144, 245);
+}
+.theme-card i{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.theme-card h3{
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.theme-card p{
+    color: #fff;
+}
+
+/* PAGE INTERVENANTS */
+.speakers-page{
+    padding: 80px 0;
+}
+/* Boutons de filtre */
+.filters{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+.filter-btn{
+    padding: 12px 25px;
+    border:  2px solid var(--accent);
+    border-radius: 30px;
+    background: var(--surface);
+    color: var(--accent);
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filter-btn:hover{
+    background: var(--accent);
+    color: #fff;
+}
+.filter-btn.active{
+    background: var(--primary);
+    color: #fff;
+}
+
+/* GRILLE DES INTERVENANTS */
+.speakers-grid-full{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+.speaker-card-full{
+    background: var(--primary);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.speaker-card-full:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 5px 15px rgb(11, 144, 245);
+}
+.speaker-card-full .speaker-info{
+   padding: 1.5rem;
+   text-align: center;
+}
+.speaker-card-full .speaker-name{
+    margin-bottom: .5rem;
+}
+.speaker-card-full .speaker-role{
+    color: var(--accent-gold);
+    margin-bottom: .5rem;
+}
+
+
+/* PAGE CONTACT */
+.registration{
+    padding: 80px 0;
+}
+.contact-flex{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+/* FORMULAIRE */
+.contact-form{
+    background: var(--primary);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border:  2px solid var(--accent);
+    color: #fff;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.form-group label{
+    display: block;
+    margin-bottom: .25rem;
+    font-weight: 600;
+    color: var(--background);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width: 100%;
+    padding: 14px;
+    border:  2px solid var(--accent);
+    border-radius: 8px;
+    outline: none;
+    background: var(--background);
+    color: var(--text);
+    transition: var(--transition);
+    font-size: 1rem;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color: var(--accent);
+    padding: 10px 12px;
+}
+.form-group textarea{
+    resize: vertical;
+}
+.contact-form h2{
+    color: #fff;
+    text-align: center;
+}
+.form-group p{
+    color: #fff;
+}
+.contact-form button{
+    background-color: var(--accent);
+}
+
+/* INFORMATIONS PRATIQUES */
+.contact-info{
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 16px;
+    border:  2px solid var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+.contact-info h2{
+    color: var(--accent);
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.info-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.3rem 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item i{
+   width: 50px;
+   height: 50px;
+   min-width: 50px;
+   display: flex;
+   justify-content: center;
+   background: rgba(46, 139, 192, .15);
+   color: var(--secondary);
+   border-radius: 50%;
+   align-items: center;
+   font-size: 1.2rem;
+   flex-shrink: 0;
+
+}
+.info-item  strong{
+    display: block;
+    margin-bottom: .3rem;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+.info-item p{
+    color: var(--text-light);
+    line-height: 1.6rem;
+}
+
+/* GOOGLE MAPS */
+.map-frame{
+    width: 100%;
+    height: 300px;
+    border: 2px solid var(--accent);
+    border-radius: 14px;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* FAQ */
+.faq-list{
+    margin-top: 3rem;
+}
+.faq-item{
+    background: var(--surface);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.faq-item input{
+    display: none;
+}
+.faq-question{
+    display: block;
+    padding: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+.faq-answer{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    transition: max-height .4s ease,padding .4s ease;
+}
+.faq-item input:checked ~ .faq-answer{
+    max-height: 200px;
+    padding: 18px;   
+}
+.faq-item input:checked ~ .faq-question{
+   background: var(--accent);
+   color: #fff;   
+}
+
+/* RESPONSIVE */
+
+/* Desktop(+1200px) */
+@media (max-width:1200px){
+    .hero-content{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-cta{
+        justify-content: center;
+    }
+    .hero-subtitle{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .countdown{
+        justify-content: center;
+    }
+    .stats-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .why-flex{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .speakers-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .themes-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .speakers-grid-full{
+     grid-template-columns: repeat(2,1fr);
+    }
+    .contact-flex{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footer-flex{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Tablette (768px) */
+@media(max-width:768px){
+    section{
+        padding: 50px 0;
+    }
+    h1{
+        font-size: 2.2rem;
+    }
+    h2,.section-title{
+        font-size: 1.7rem;
+    }
+    /* NAVBAR menu hamburger */
+    .hamburger{
+        display: flex;
+    }
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease;
+    }
+    .nav-links.active{
+        max-height: 400px;           
+    }
+    .nav-links li{
+        width: 100%;
+    }
+    .nav-links a{
+        display: block;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-actions{
+        margin-left: auto;
+    }
+    /* HERO */
+    .hero{
+        padding: 60px 0;
+    }
+    .hero h1{
+        font-size: 2.4rem;
+    }
+    .hero-subtitle{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .hero-cta{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-cta .btn{
+        text-align: center;
+    }
+    .countdown-item{
+        width: 75px;
+        padding: 12px;
+    }
+    .countdown-number{
+        font-size: 1.5rem;
+    }
+    /* GRILLES colonne */
+    .stats-grid,
+    .why-flex,
+    .speakers-grid,
+    .themes-grid,
+    .speakers-grid-full,
+    .footer-flex{
+        grid-template-columns: 1fr;
+    }
+    /* SPONSORS */
+    .sponsors-flex{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    /* ONGLETS PROGRAMME */
+    .tabs{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tab-btn{
+        width: 100%;
+        text-align: center;
+    }
+   .schedule-table thead{
+        display: none;
+   }
+   .schedule-table,
+   .schedule-table tbody{
+        display: block;
+        width: 100%;
+   }
+   .schedule-table tr:active,
+   .schedule-table tr:active td{
+    background: rgba(46, 141, 192, 0.121);
+   }
+   .schedule-table tr{
+     display: block;
+     width: 100%;
+     margin-bottom: 1.2rem;
+     border-radius: 10px;
+     box-shadow: var(--shadow);
+     border: 1px solid var(--border);
+     overflow: hidden;
+     box-sizing: border-box;
+   }
+   .schedule-table td{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 14px 10px 130px;
+        position: relative;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface);
+   }
+   .schedule-table td:last-child{
+        border-bottom: none;
+   }
+   .schedule-table td::before{
+        position: absolute;
+        left: 14px;
+        top: 10px;
+        font-weight: 700;
+        color: var(--primary);
+   }
+   .schedule-table td:nth-child(1)::before{content: "Heure :";}
+   .schedule-table td:nth-child(2)::before{content: "Session :";}
+   .schedule-table td:nth-child(3)::before{content: "Intervenant :";}
+   .schedule-table td:nth-child(4)::before{content: "Salle :"; }
+    /* FILTRES INTERVENANTS */
+    .filters{
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .6rem;
+    }
+    .filter-btn{
+        padding:  10px 18px;
+        font-size: .9rem;
+    }
+    /* FORMULAIRE CONTACT */
+    .contact-form{
+        padding: 24px;
+    }
+    .contact-flex{
+        grid-template-columns: 1fr;
+    }
+    /* FAQ */
+    .faq-question{
+        font-size: .95rem;
+        padding: 14px;
+    }
+    /* FOOTER */
+    footer{
+        text-align: center;
+    }
+    .social-icons{
+        justify-content: center;
+    }
+    .footer-col a{
+        margin: .5rem auto;
+    }
+}
+
+/* mobile(375px) */
+@media (max-width: 375px){
+
+    .container{
+        width: 94%;
+    }
+    h1{
+        font-size: 1.8rem;
+    }
+    h2, .section-title{
+        font-size: 1.4rem;
+    }
+    .hero h1{
+        font-size: 1.9rem;
+    }
+    .hero-subtitle{
+        font-size: 1rem;
+    }
+    .countdown{
+        gap: .5rem;
+    }
+    .countdown-item{
+        width: 65px;
+    }
+    .countdown-number{
+        font-size: 1.2rem;
+    }
+    .schedule-table tr:active,
+    .schedule-table tr:active td{
+        background: rgba(46, 141, 192, 0.121);
+   }
+    .stat-card,
+    .why-card,
+    .theme-card{
+        padding: 1.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+        padding: 11px;
+        font-size: .95rem;
+    }
+    .btn{
+        padding: 12px 20px;
+        font-size: .95rem;
+    }
+}   
+
+
+
