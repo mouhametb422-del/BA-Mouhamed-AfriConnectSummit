@@ -54,3 +54,76 @@ if (backToTop) {
     });
 }
 
+// COMMIT 7 - COMPTE A REBOURS, COMPTEUR DES STATIQUES, ANIMATIONS
+
+// COMPTE A REBOURS
+const evenDate = new Date("November 12, 2026 09:00:00").getTime();
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = evenDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const daysEl = document.getElementById("countdown-days");
+    const hoursEl = document.getElementById("countdown-hours");
+    const minutesEl = document.getElementById("countdown-minutes");
+    const secondsEl = document.getElementById("countdown-seconds");
+
+    if (daysEl) daysEl.textContent = days;
+    if (hoursEl) hoursEl.textContent = hours;
+    if (minutesEl) minutesEl.textContent = minutes;
+    if (secondsEl) secondsEl.textContent = seconds;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// COMPTEUR ANIMES
+const counters = document.querySelectorAll(".stat-number");
+function startCounters() {
+    counters.forEach(counter => {
+        const target = Number(counter.dataset.target);
+        let current = 0;
+        const increment = Math.ceil(target / 100);
+        const timer = setInterval(() => {
+            current += increment;
+            if(current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = current;
+            }
+        }, 20);
+    });
+}
+
+// LANCER LES COMPTEURS
+let countersStarted = false;
+window.addEventListener("scroll", () => {
+    const stats = document.querySelector(".stats-grid");
+    if (!stats || countersStarted) return;
+    const position = stats.getBoundingClientRect().top;
+    if (position < window.innerHeight - 100) {
+        countersStarted = true;
+        startCounters();
+    }
+});
+
+// ANIMATIONS AU SCROLL (IntersectionObserver)
+const elements = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.2
+});
+elements.forEach(element => {
+    observer.observe(element);
+});
+

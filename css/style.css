@@ -1270,3 +1270,82 @@ body[data-theme="dark"]{
 .back-to-top:hover{
     transform: translateY(-3px);
 }
+
+/* COMMIT - 7 ANIMATIONS AU SCROLL */
+
+/* REVEAL AU SCROLL */
+.reveal{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .8s ease;
+}
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FADE-IN-UP */
+.fade-in-up{
+    opacity: 0;  
+    transform: translateY(40px); 
+    animation: fadeUp .8s forwards;
+}
+.delay-1{
+    animation-delay: .2s;
+}
+.delay-2{
+    animation-delay: .4s;
+}
+.delay-3{
+    animation-delay: .6s;
+}
+.delay-4{
+    animation-delay: .8s;
+}
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+/* GLISSEMENT GAUCHE */
+.slide-left{
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: .8s;
+}
+.slide-left.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* EFFET ZOOM - au scroll*/
+.reveal.zoom{
+    transform: scale(0.8);
+}
+.reveal.zoom.active{
+    opacity: 1;
+    transform: scale(1);
+}
+.reveal.zoom.active:hover{
+   transform: scale(1.05); 
+}
+
+/* GLISSEMENT DROITE */
+.slide-right{
+    opacity: 0;
+    transform: translateX(60px);
+    transition: .8s;
+}
+.slide-right.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
