@@ -127,3 +127,113 @@ elements.forEach(element => {
     observer.observe(element);
 });
 
+// COMMIT 8 - ONGLETS DU PROGRAMME, FILTRES DES INTERVENANTS, VALIDATION FORMULAIRE CONTACT ET MESSAGE SUCCES
+
+// ONGLETS DU PROGRAMME
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabPanels = document.querySelectorAll(".tab-panel");
+
+tabButtons.forEach(button => {
+    button.addEventListener("click", () =>{
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        tabPanels.forEach(panel => panel.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const target = document.getElementById(button.dataset.tab);
+
+        if (target) {
+            target.classList.add("active")
+        }
+    });
+});
+
+// FILTRE DES INTERVENANTS
+const filterButtons = document.querySelectorAll(".filter-btn");
+const speakerCards = document.querySelectorAll(".speaker-card-full");
+
+filterButtons.forEach(button  => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn  => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        speakerCards.forEach(card => {
+            const category = card.dataset.categorie;
+            if (filter === "tous" || category === filter) {
+                card.classList.remove("hide");
+                card.classList.add("show");
+                
+            } else {
+                card.classList.remove("show");
+                card.classList.add("hide"); 
+            }
+        });
+    });
+});
+
+// FORMULAIRE D'INSCRIPTION
+
+const form = document.getElementById("inscription-form");
+if (form) {
+    const successBox = document.getElementById("success-box");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let formvalid = true;
+
+        // Récupération des champs
+        const nom = document.getElementById("nom");
+        const email = document.getElementById("email");
+        const telephone = document.getElementById("telephone");
+        const participation = document.getElementById("participation");
+        const pays = document.getElementById("pays");
+        const message = document.getElementById("message");
+
+        const fields = [
+            nom,
+            email,
+            telephone,
+            participation,
+            pays,
+            message
+        ];
+
+        // Suppression des anciennes erreurs
+        fields.forEach(field => {
+            const group = field.closest(".form-group");
+            if (group) {
+                group.classList.remove("error");
+            }
+        });
+
+        // vérification des champs vides
+        fields.forEach(field => {
+            if (field.value.trim() === ""){
+                field.closest(".form-group").classList.add("error");
+                formvalid = false;
+            }
+        });
+
+        // Vérification email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(email.value.trim() !== "" && !emailPattern.test(email.value)) {
+            email.closest(".form-group").classList.add("error"); 
+            formvalid = false;
+        }
+
+        // Vérification message
+        if(message.value.trim().length < 20) {
+            message.closest(".form-group").classList.add("error");
+            formvalid = false;
+        }
+
+        // Si tout est correct
+        if (formvalid) {
+            successBox.classList.add("show");
+            form.reset();
+            setTimeout(()  =>{
+                successBox.classList.remove("show");
+            }, 5000);
+        }
+
+    });
+}
