@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriConnect Summit</title>
+    <title>Contact - AfriConnect Summit</title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,35 +55,31 @@
             </div>
         </section>
 
-        <!-- FOMULAIRE -->
+        <!-- FORMULAIRE -->
         <section class="registration">
             <div class="container">
                 <div class="contact-flex">
 
-                    <!-- Colone gauche : formulaire -->
+                    <!-- Colonne gauche : formulaire -->
                     <form class="contact-form" id="inscription-form" novalidate>
-                        <h2 style="margin-bottom: 1rem;">Formulaire d'inscription</h2>
-                        <!-- Message de succès affiché en JS après validation -->
-                        <div class="success-box" id="success-box">
-                            Votre inscription a bien été envoyée ! Nous vous recontactons rapidement.
-                        </div>
+                        <h2>Formulaire d'inscription</h2>
 
                         <div class="form-group">
                             <label for="nom">Nom complet *</label>
                             <input type="text" id="nom" name="nom" placeholder="Votre nom">
-                            <p class="error-message">Ce champ est requis.</p>
+                            <span class="error-message">Ce champ est requis.</span>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Adresse email *</label>
                             <input type="email" id="email" name="email" placeholder="Votre email">
-                            <p class="error-message">Ce champ est requis.</p>
+                            <span class="error-message">Ce champ est requis.</span>
                         </div>
 
                         <div class="form-group">
                             <label for="telephone">Téléphone *</label>
                             <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro">
-                            <p class="error-message">Ce champ est requis.</p>
+                            <span class="error-message">Ce champ est requis.</span>
                         </div>
 
                         <div class="form-group">
@@ -91,12 +87,12 @@
                             <select id="participation" name="participation">
                                 <option value="">-- Choisissez une option --</option>
                                 <option value="visiteur">Visiteur</option>
-                                <option value="intervenants">Intervenants</option>
+                                <option value="intervenant">Intervenant</option>
                                 <option value="sponsor">Sponsor</option>
                                 <option value="presse">Presse</option>
                                 <option value="startup">Startup exposante</option>
                             </select>
-                            <p class="error-message">Ce champ est requis.</p>
+                            <span class="error-message">Ce champ est requis.</span>
                         </div>
 
 
@@ -107,7 +103,7 @@
                                 <option value="benin">Bénin</option>
                                 <option value="cameroun">Cameroun</option>
                                 <option value="cote-ivoire">Côte d'Ivoire</option>
-                                <option value="egypte">Égypte</option>
+                                <option value="zimbabwe">Zimbabwe</option>
                                 <option value="ghana">Ghana</option>
                                 <option value="kenya">Kenya</option>
                                 <option value="maroc">Maroc</option>
@@ -117,21 +113,26 @@
                                 <option value="tunisie">Tunisie</option>
                                 <option value="afrique-sud">Afrique du Sud</option>
                             </select>
-                            <p class="error-message">Ce champ est requis.</p>
+                            <span class="error-message">Ce champ est requis.</span>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message / motivation *</label>
                             <textarea id="message" name="message" rows="4" placeholder="Expliquez-nous en quelques mots pourquoi vous souhaitez participer..."></textarea>
-                            <p class="error-message">Votre message doit contenir au moins 20 caractères.</p>
+                            <span class="error-message">Votre message doit contenir au moins 20 caractères.</span>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer mon inscription</button>
+                        <button type="submit" class="btn btn-primary">Envoyer mon inscription</button>
+
+                        <!-- Message de succès affiché en JS après validation -->
+                        <div class="success-box" id="success-box">
+                            Votre inscription a bien été envoyée ! Nous vous recontactons rapidement.
+                        </div>
                     </form>
 
-                    <!-- Colone droite : informations pratiques -->
+                    <!-- Colonne droite : informations pratiques -->
                     <div class="contact-info">
-                        <h2 style="margin-bottom: 1.5rem;">Informations pratiques</h2>
+                        <h2>Informations pratiques</h2>
                         
                         <div class="info-item">
                             <i class="bi bi-geo-alt-fill"></i>
@@ -171,7 +172,7 @@
         </section>
 
         <!-- FAQ EN ACCORDEON CSS PUR -->
-        <section class="faq" style="background-color: var(--surface);">
+        <section class="faq">
             <div class="container">
                 <p class="section-eyebrow reveal">Questions fréquentes</p>
                 <h2 class="section-title reveal">FAQ</h2>
@@ -218,7 +219,7 @@
         <div class="container">
             <div class="footer-flex">
                 <div class="footer-col">
-                    <h3>Afri<span style="color: var(--accent-gold);">Connect</span> Summit</h3>
+                    <h3>Afri<span>Connect</span> Summit</h3>
                     <p>Le sommet tech panafricain qui réunit chaque année les acteurs du numérique du continent.</p>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/share/1GBBiLaqV4/?mibextid=wwXIfr" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -246,7 +247,6 @@
 
             <div class="footer-bottom">
                 <p>&copy; <span id="annee-actuelle">2026</span> AfriConnect Summit. Tous droits réservés.</p>
-                <p>Projet réalisé dans le cadre d'un examen L1 - Web</p>
             </div>
         </div>
     </footer>

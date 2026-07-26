@@ -14,17 +14,21 @@ if(hamburger && navlinks) {
 // DARK MODE
 const themeBtn = document.querySelector(".theme-toggle");
 const body = document.body;
+const icon = document.querySelector(".theme-toggle i");
 if(localStorage.getItem("theme") === "dark") {
     body.setAttribute("data-theme", "dark");
+    icon.className = "bi bi-sun-fill";
 }
 if (themeBtn) {
     themeBtn.addEventListener("click", () => {
         if (body.getAttribute("data-theme") === "dark") {
             body.removeAttribute("data-theme");
             localStorage.setItem("theme", "light");
+            icon.className = "bi bi-moon-stars-fill";
         } else {
             body.setAttribute("data-theme", "dark");
             localStorage.setItem("theme", "dark");
+            icon.className = "bi bi-sun-fill";
         }
     });
 }
@@ -223,6 +227,13 @@ if (form) {
         // Vérification message
         if(message.value.trim().length < 20) {
             message.closest(".form-group").classList.add("error");
+            formvalid = false;
+        }
+
+        // Vérification téléphone 
+        const telPattern = /^[\d\s+\-]{8,15}$/;
+        if(telephone.value.trim() !== "" && !telPattern.test(telephone.value)){
+            telephone.closest(".form-group").classList.add("error");
             formvalid = false;
         }
 
